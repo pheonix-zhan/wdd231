@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="WDD231 Course Home Page">
+    <meta name="author" content="YOUR NAME">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WDD231 | Home</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="branding">
+            <img src="images/logo.svg" alt="Site Logo">
+            <span>NANKYA SANDRA</span>
+            <button id="menuBtn">&#9776;</button>
+        </div>
+    </header>
+
+    <nav id="navMenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="#">Chamber</a>
+        <a href="#">Final</a>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section>
+            <h2>About Me</h2>
+            <p>I am Certified Librarian and translator. I love programming and this is one of the main reasons i applied
+                to do this course to enjoy it along the way and gain. I love cats.</p>
+        </section>
+
+        <section>
+            <h2>Certificate Courses</h2>
+
+            <div class="filters">
+                <button data-filter="all">All</button>
+                <button data-filter="wdd">WDD</button>
+                <button data-filter="cse">CSE</button>
+            </div>
+
+            <div id="courses"></div>
+            <p id="credits"></p>
+        </section>
+
+        <section>
+            <h2>Resources</h2>
+            <p>Helpful learning resources.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/pheonix-zhan">GitHub</a>
+            <a href="https://linkedin.com/in/nankya-sandra">LinkedIn</a>
+        </div>
+
+
+        <p>&copy; <span id="currentYear"></span>🎊✨SandySunshine✨✨ Uganda</p>
+        <p id="lastModified"></p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #1f2933;
+    color: white;
+    padding: 1rem;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.branding img {
+    width: 40px;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+    background-color: #111827;
+}
+
+nav a {
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #374151;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.filters button {
+    margin-right: 0.5rem;
+}
+
+#courses {
+    display: grid;
+    gap: 1rem;
+}
+
+.course {
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+.course.completed {
+    background-color: #d1fae5;
+}
