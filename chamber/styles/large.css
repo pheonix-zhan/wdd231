@@ -1,8 +1,15 @@
 @media only screen and (min-width: 32rem) {
+    /* ---------- Nav ---------- */
+    .hamburger {
+        display: none;
+    }
 
-    /* ---------- Navigation ---------- */
     .navigation {
-        display: flex;
+        display: flex !important;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
         gap: 1rem;
     }
 
@@ -11,46 +18,51 @@
     }
 
     /* ---------- Hero ---------- */
+    .hero {
+        min-height: 400px;
+        position: relative;
+    }
+
     .hero article {
         position: absolute;
         bottom: 2rem;
-        left: 2rem;
-        max-width: 400px;
-        background-color: rgba(255, 255, 255, 0.9);
+        right: 2rem;
+        max-width: 420px;
+        padding: 1.5rem;
     }
 
-    /* ---------- Weather Section ---------- */
-    .weather-card,
-    .forecast-card {
-        max-width: 800px;
-        margin: 1rem auto;
-    }
-    @media only screen and (min-width: 32rem) {
-
-    .weather-card,
-    .forecast-card {
-        margin: 0;
-    }
-
+    /* ---------- Weather (Left/Right) ---------- */
     .weather-forecast-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr 1fr; /* Left: weather-card, Right: forecast-card */
+        gap: 1.5rem;
         max-width: 1000px;
         margin: 2rem auto;
+        padding: 0 1rem;
     }
-}
 
-
-    /* ---------- Members Grid ---------- */
+    /* ---------- Directory (Left/Middle/Right for Grid) ---------- */
     #members.grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Left, Middle, Right columns */
     }
 
-    /* ---------- Footer ---------- */
+    /* ---------- Footer (Left/Middle/Right) ---------- */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr 1fr; /* Left: contact, Middle: social, Right: copyright */
         align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-content > div:first-child {
+        text-align: left;
+    }
+
+    .footer-content > nav {
+        text-align: center;
+    }
+
+    .footer-content > div:last-child {
+        text-align: right;
     }
 }

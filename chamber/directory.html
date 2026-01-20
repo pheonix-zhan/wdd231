@@ -39,15 +39,15 @@
 <body>
 
     <header>
-        <img src="images/theme.jpg" alt="Margins and Mugs Guild logo">
+        <img src="images/theme.jpg" alt="Margins and Mugs Guild logo - a themed image representing books and coffee">
 
         <nav class="nav-links">
-            <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+            <button id="menuButton" class="hamburger" aria-expanded="false" aria-label="Toggle menu">☰</button>
             <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="index.html" id="homeLink">Home</a></li>
+                <li><a href="discover.html" id="discoverLink">Discover</a></li>
+                <li><a href="directory.html" id="directoryLink">Directory</a></li>
+                <li><a href="join.html" id="joinLink">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -56,11 +56,8 @@
 
         <!-- Hero Section -->
         <section class="hero">
-            <!-- <img src="images/catss.jpg" alt="Cozy book café interior"> -->
-
             <article>
                 <h1 class="hero-title">Margins & Mugs Guild</h1>
-                <img src="images/teas.jpg" alt="People enjoying coffee and books">
                 <p>
                     Margins & Mugs is a chamber of commerce dedicated to book cafés, uniting café owners,
                     booksellers, writers, and creatives who believe in the power of stories and shared spaces.
@@ -98,13 +95,16 @@
         </section>
 
         <!-- Members injected by JS -->
-        <section id="members" class="grid"></section>
+        <section id="members" class="grid">
+            <noscript>
+                <p>JavaScript is required to display the member directory. Please enable JavaScript or contact us for assistance.</p>
+            </noscript>
+        </section>
 
     </main>
 
     <footer>
         <div class="footer-content">
-
             <div>
                 <p><strong>Margins & Mugs Guild</strong></p>
                 <p>Kampala Street Avenue</p>
@@ -113,17 +113,17 @@
             </div>
 
             <nav class="social-media">
-                <a href="https://instagram.com">
-                    <img src="images/instagram.jpg" alt="Instagram">
+                <a href="https://instagram.com" aria-label="Visit our Instagram">
+                    <img src="images/instagram.jpg" alt="Instagram icon">
                 </a>
-                <a href="https://twitter.com">
-                    <img src="images/twitter.png" alt="Twitter">
+                <a href="https://twitter.com" aria-label="Visit our Twitter">
+                    <img src="images/twitter.png" alt="Twitter icon">
                 </a>
-                <a href="https://tiktok.com">
-                    <img src="images/tiktok.png" alt="TikTok">
+                <a href="https://tiktok.com" aria-label="Visit our TikTok">
+                    <img src="images/tiktok.png" alt="TikTok icon">
                 </a>
-                <a href="https://youtube.com">
-                    <img src="images/you.png" alt="YouTube">
+                <a href="https://youtube.com" aria-label="Visit our YouTube">
+                    <img src="images/you.png" alt="YouTube icon">
                 </a>
             </nav>
 
@@ -133,7 +133,6 @@
                 </p>
                 <p id="lastModified"></p>
             </div>
-
         </div>
     </footer>
 

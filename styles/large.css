@@ -10,22 +10,21 @@
         gap: 1rem;
     }
 
-    /* ---------- Hero Overlay ---------- */
+    /* ---------- Hero overlay ---------- */
+    .hero {
+        min-height: 400px;
+        position: relative;
+    }
+
     .hero article {
         position: absolute;
         bottom: 2rem;
         right: 2rem;
-        max-width: 400px;
-        background-color: rgba(164, 223, 216, 0.9);
+        max-width: 420px;
         padding: 1.5rem;
-        border-radius: 10px;
     }
 
-    .hero article img {
-        display: none;
-    }
-
-    /* ---------- Weather + Forecast ---------- */
+    /* ---------- Weather left / right ---------- */
     .weather-forecast-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -34,15 +33,28 @@
         margin: 2rem auto;
     }
 
-    /* ---------- Members ---------- */
+    /* ---------- Businesses: left middle right ---------- */
     #members.grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* ---------- Footer ---------- */
+    /* ---------- Footer left | middle | right ---------- */
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-content > div:first-child {
+        text-align: left;
+    }
+
+    .footer-content > nav {
+        text-align: center;
+    }
+
+    .footer-content > div:last-child {
+        text-align: right;
     }
 }
