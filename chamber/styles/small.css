@@ -174,7 +174,7 @@ header img {
 /* ---------- Footer ---------- */
 footer {
     background-color: var(--accent2-color);
-    color: #fff;
+    color:black;
     padding: 1rem;
 }
 
