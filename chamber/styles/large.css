@@ -5,7 +5,7 @@
     }
 
     .navigation {
-        display: flex !important;
+        display: flex;
         position: static;
         background: none;
         box-shadow: none;
