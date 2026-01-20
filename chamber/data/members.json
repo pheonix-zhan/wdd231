@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Story & Sip Café",
+    "address": "Plot 12 Kampala Road",
+    "phone": "+256 781 288 158",
+    "website": "https://storyandsip.com",
+    "image": "bk.jpg",
+    "membership": 3,
+    "description": "A cozy space where every sip tells a story."
+  },
+  {
+    "name": "Cozy Pages Café",
+    "address": "Bugolobi Lane",
+    "phone": "+256 702 111 234",
+    "website": "https://cozypages.com",
+    "image": "area.jpg",
+    "membership": 2,
+    "description": "Warm drinks, soft lighting, and endless pages."
+  },
+  {
+    "name": "Pages & Cups",
+    "address": "Ntinda Complex",
+    "phone": "+256 754 222 678",
+    "website": "https://pagesandcups.com",
+    "image": "catss.jpg",
+    "membership": 1,
+    "description": "Where books and beverages meet."
+  },
+  {
+    "name": "Ink & Brew",
+    "address": "Kololo Hill",
+    "phone": "+256 781 555 890",
+    "website": "https://inkandbrew.com",
+    "image": "bokcafe.jpg",
+    "membership": 3,
+    "description": "Creative minds fueled by coffee."
+  },
+  {
+    "name": "The Reading Mug",
+    "address": "Makerere Hill",
+    "phone": "+256 700 333 444",
+    "website": "https://readingmug.com",
+    "image": "cafe.jpg",
+    "membership": 2,
+    "description": "Quiet corners and bold flavors."
+  },
+  {
+    "name": "Novel Grounds",
+    "description": "Fresh brews and fresh chapters.",
+    "image": "bk.jpg",
+    "address": "Muyenga Rise",
+    "phone": "+256 712 999 111",
+    "membership": 1,
+    "website": "https://novelgrounds.com"
+    
+  },
+  {
+    "name": "Bookmarks & Beans",
+    "address": "Naalya Estate",
+    "phone": "+256 789 888 222",
+    "website": "https://bookmarksbeans.com",
+    "image": "book.jpg",
+    "membership": 2,
+    "description": "Your daily pause between pages."
+  }
+]

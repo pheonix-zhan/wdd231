@@ -1,40 +1,48 @@
 @media only screen and (min-width: 32rem) {
 
-    /* ---------- Nav ---------- */
-    .menu-toggle {
-        display: none;
-    }
-
+    /* ---------- Navigation ---------- */
     .navigation {
-        display: flex !important;
+        display: flex;
         gap: 1rem;
     }
 
-    /* ---------- Hero Overlay ---------- */
+    .navigation li {
+        margin: 0;
+    }
+
+    /* ---------- Hero ---------- */
     .hero article {
         position: absolute;
         bottom: 2rem;
-        right: 2rem;
+        left: 2rem;
         max-width: 400px;
-        background-color: rgba(164, 223, 216, 0.9);
-        padding: 1.5rem;
-        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 
-    .hero article img {
-        display: none;
+    /* ---------- Weather Section ---------- */
+    .weather-card,
+    .forecast-card {
+        max-width: 800px;
+        margin: 1rem auto;
+    }
+    @media only screen and (min-width: 32rem) {
+
+    .weather-card,
+    .forecast-card {
+        margin: 0;
     }
 
-    /* ---------- Weather + Forecast ---------- */
     .weather-forecast-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
         max-width: 1000px;
         margin: 2rem auto;
     }
+}
 
-    /* ---------- Members ---------- */
+
+    /* ---------- Members Grid ---------- */
     #members.grid {
         grid-template-columns: repeat(3, 1fr);
     }
