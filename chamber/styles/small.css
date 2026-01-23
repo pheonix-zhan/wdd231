@@ -78,6 +78,13 @@ header img {
     color: var(--accent2-color);
 }
 
+.navigation a.current {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+
 /* ---------- Hero ---------- */
 .hero {
     background-image: url("../images/teas.jpg");
@@ -104,7 +111,8 @@ header img {
 
 /* ---------- Weather & Forecast ---------- */
 .weather-forecast-wrapper {
-    display: block; /* Stacked on mobile */
+    display: block;
+    /* Stacked on mobile */
     padding: 0 1rem;
 }
 
@@ -127,7 +135,7 @@ header img {
     padding: 0.5rem 1rem;
     background-color: var(--accent1-color);
     border: none;
-    color:black;
+    color: black;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -141,10 +149,20 @@ header img {
 
 #members {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
+    /* Single column on mobile */
     gap: 1rem;
     padding: 1rem;
 }
+
+#members.list .member-card img {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 
 #members.list .member-card {
     display: flex;
@@ -169,17 +187,25 @@ header img {
     height: auto;
     border-radius: 4px;
     margin-bottom: 1rem;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        max-height 0.3s ease,
+        margin 0.3s ease;
+    max-height: 200px;
 }
+
 
 /* ---------- Footer ---------- */
 footer {
-    background-color: var(--accent2-color);
-    color:black;
+    background-color: var(--secondary-color);
+    color: black;
     padding: 1rem;
 }
 
 .footer-content {
-    text-align: center; /* Centered on mobile */
+    text-align: center;
+    /* Centered on mobile */
 }
 
 .social-media img {

@@ -55,6 +55,17 @@ menuButton.addEventListener("click", () => {
     menuButton.setAttribute("aria-expanded", !isExpanded);
     navigation.classList.toggle("active");
 });
+// ---------- Active Page Indicator ----------
+const navLinks = document.querySelectorAll(".navigation a");
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.add("current");
+        link.setAttribute("aria-current", "page");
+    }
+});
+
 
 // ---------- Footer Dates ----------
 document.querySelector("#currentYear").textContent = new Date().getFullYear();
