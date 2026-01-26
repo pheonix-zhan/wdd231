@@ -1,61 +1,20 @@
-const membersContainer = document.querySelector("#members");
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
+// ==================================================
+// GLOBAL NAV
+// ==================================================
 const menuButton = document.querySelector("#menuButton");
 const navigation = document.querySelector(".navigation");
 
-// ---------- Fetch Members ----------
-async function getMembers() {
-    try {
-        const response = await fetch("data/members.json");
-        if (!response.ok) throw new Error("Failed to load member data");
-        const data = await response.json();
-        displayMembers(data);
-    } catch (error) {
-        console.error("Error loading members:", error);
-        membersContainer.innerHTML = "<p>Sorry, we couldn't load the member directory. Please try again later.</p>";
-    }
-}
-
-// ---------- Display Members ----------
-function displayMembers(members) {
-    membersContainer.innerHTML = "";
-
-    members.forEach(member => {
-        const card = document.createElement("section");
-        card.classList.add("member-card");
-
-        card.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} - ${member.description}">
-            <h3>${member.name}</h3>
-            <p>${member.description}</p>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-            <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
-        `;
-
-        membersContainer.appendChild(card);
+if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => {
+        const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", !isExpanded);
+        navigation.classList.toggle("active");
     });
 }
 
-// ---------- Grid / List Toggle ----------
-gridButton.addEventListener("click", () => {
-    membersContainer.classList.add("grid");
-    membersContainer.classList.remove("list");
-});
-
-listButton.addEventListener("click", () => {
-    membersContainer.classList.add("list");
-    membersContainer.classList.remove("grid");
-});
-
-// ---------- Hamburger Menu Toggle ----------
-menuButton.addEventListener("click", () => {
-    const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", !isExpanded);
-    navigation.classList.toggle("active");
-});
-// ---------- Active Page Indicator ----------
+// ==================================================
+// ACTIVE PAGE INDICATOR
+// ==================================================
 const navLinks = document.querySelectorAll(".navigation a");
 const currentPage = window.location.pathname.split("/").pop();
 
@@ -66,10 +25,177 @@ navLinks.forEach(link => {
     }
 });
 
+// ==================================================
+// FOOTER DATES
+// ==================================================
+const yearSpan = document.querySelector("#currentYear");
+const lastModified = document.querySelector("#lastModified");
 
-// ---------- Footer Dates ----------
-document.querySelector("#currentYear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+if (lastModified) lastModified.textContent = `Last Modified: ${document.lastModified}`;
 
-// ---------- Run ----------
+// ==================================================
+// MEMBERS / SPOTLIGHT VARIABLES
+// ==================================================
+const membersContainer = document.querySelector("#members"); // Directory page
+const spotlightContainer = document.querySelector("#spotlight-container"); // Home page
+const gridButton = document.querySelector("#grid");
+const listButton = document.querySelector("#list");
+
+// ==================================================
+// HELPER: MAP NUMBER TO MEMBERSHIP STRING
+// ==================================================
+function getMembershipLevel(num) {
+    switch(num) {
+        case 3: return "Gold";
+        case 2: return "Silver";
+        case 1: return "Bronze";
+        default: return "Member";
+    }
+}
+
+// ==================================================
+// FETCH MEMBERS
+// ==================================================
+async function getMembers() {
+    try {
+        const response = await fetch("data/members.json");
+        if (!response.ok) throw new Error("Failed to load member data");
+
+        const data = await response.json();
+
+        // Display Directory if container exists
+        if (membersContainer) displayMembers(data);
+
+        // Display Home page spotlights if container exists
+        if (spotlightContainer) loadSpotlights(data);
+
+    } catch (error) {
+        console.error("Error loading members:", error);
+        if (membersContainer) membersContainer.innerHTML = "<p>Unable to load member directory.</p>";
+        if (spotlightContainer) spotlightContainer.innerHTML = "<p>Unable to load member spotlights.</p>";
+    }
+}
+
+// ==================================================
+// DIRECTORY PAGE: DISPLAY MEMBERS
+// ==================================================
+function displayMembers(members) {
+    if (!membersContainer) return;
+
+    membersContainer.innerHTML = "";
+
+    members.forEach(member => {
+        const card = document.createElement("section");
+        card.classList.add("member-card");
+
+        card.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name}">
+            <h3>${member.name}</h3>
+            <p>${member.description}</p>
+            <p><strong>Address:</strong> ${member.address}</p>
+            <p><strong>Phone:</strong> ${member.phone}</p>
+            <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
+            <p class="membership">${getMembershipLevel(member.membership)} Member</p>
+        `;
+
+        membersContainer.appendChild(card);
+    });
+}
+
+// ==================================================
+// DIRECTORY GRID/LIST TOGGLE
+// ==================================================
+if (membersContainer && gridButton && listButton) {
+    gridButton.addEventListener("click", () => {
+        membersContainer.classList.add("grid");
+        membersContainer.classList.remove("list");
+    });
+
+    listButton.addEventListener("click", () => {
+        membersContainer.classList.add("list");
+        membersContainer.classList.remove("grid");
+    });
+}
+
+// ==================================================
+// HOME PAGE: SPOTLIGHTS
+// ==================================================
+function loadSpotlights(members) {
+    if (!spotlightContainer) return;
+
+    // Only Gold (3) or Silver (2)
+    const qualified = members.filter(m => m.membership === 3 || m.membership === 2);
+
+    // Randomize and pick 2–3 members
+    const shuffled = qualified.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 3);
+
+    spotlightContainer.innerHTML = "";
+
+    selected.forEach(member => {
+        const card = document.createElement("section");
+        card.classList.add("spotlight-card");
+
+        card.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name} logo">
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p class="membership">${getMembershipLevel(member.membership)} Member</p>
+        `;
+
+        spotlightContainer.appendChild(card);
+    });
+}
+
+// ==================================================
+// HOME / DIRECTORY WEATHER (OpenWeatherMap)
+// ==================================================
+const tempSpan = document.querySelector("#current-temp");
+const descSpan = document.querySelector("#weather-desc");
+const iconImg = document.querySelector("#weather-icon");
+const forecastTemps = document.querySelectorAll(".forecast-temp");
+
+// Replace with your OpenWeatherMap API key
+const apiKey = "YOUR_API_KEY";
+const lat = 0.3476;   // Kampala
+const lon = 32.5825;
+
+async function getWeather() {
+    if (!tempSpan || !descSpan) return;
+
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch weather");
+
+        const data = await response.json();
+        const current = data.list[0];
+
+        tempSpan.textContent = Math.round(current.main.temp);
+        descSpan.textContent = current.weather[0].description;
+
+        if (iconImg) {
+            const icon = current.weather[0].icon;
+            iconImg.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+            iconImg.alt = current.weather[0].description;
+        }
+
+        // Fill 3-day forecast
+        const forecast = data.list.filter(item => item.dt_txt.includes("12:00:00"));
+        forecastTemps.forEach((span, index) => {
+            if (forecast[index]) span.textContent = Math.round(forecast[index].main.temp);
+        });
+
+    } catch (error) {
+        console.error("Weather error:", error);
+    }
+}
+
+// ==================================================
+// RUN
+// ==================================================
 getMembers();
+getWeather();

@@ -1,4 +1,4 @@
-@media only screen and (min-width: 32rem) {
+@media only screen and (min-width: 768px) {
     /* ---------- Nav ---------- */
     .hamburger {
         display: none;
@@ -20,36 +20,62 @@
     /* ---------- Hero ---------- */
     .hero {
         min-height: 400px;
-        position: relative;
     }
 
-    .hero article {
+    .hero-content {
         position: absolute;
         bottom: 2rem;
         right: 2rem;
-        max-width: 420px;
-        padding: 1.5rem;
+        max-width: 400px;
+        text-align: left;
     }
 
-    /* ---------- Weather (Left/Right) ---------- */
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    /* ---------- Weather + Spotlights layout ---------- */
     .weather-forecast-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Left: weather-card, Right: forecast-card */
+        grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         max-width: 1000px;
         margin: 2rem auto;
         padding: 0 1rem;
     }
 
-    /* ---------- Directory (Left/Middle/Right for Grid) ---------- */
-    #members.grid {
-        grid-template-columns: repeat(3, 1fr); /* Left, Middle, Right columns */
+    .spotlights {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
     }
 
-    /* ---------- Footer (Left/Middle/Right) ---------- */
+    .spotlight-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    /* ---------- Directory grid ---------- */
+    #members.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #members.list .member-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #members.list .member-card img {
+        width: 150px;
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+    /* ---------- Footer ---------- */
     .footer-content {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Left: contact, Middle: social, Right: copyright */
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
         gap: 1rem;
     }

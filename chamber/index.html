@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Margins and Mugs Guild is a chamber of commerce dedicated to book cafés, bringing together coffee, literature, and community.">
+    <meta name="author" content="Sandra Nankya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Margins & Mugs Guild | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- Normalize & CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- Facebook Open Graph -->
+    <meta property="og:title" content="Margins & Mugs Guild">
+    <meta property="og:description"
+        content="A chamber of commerce for book cafés, uniting stories, coffee, and culture.">
+    <meta property="og:url" content="https://pheonix-zhan.github.io/chamber/index.html">
+    <meta property="og:image" content="https://pheonix-zhan.github.io/wdd231/chamber/og-image.jpg">
+    <meta property="og:site_name" content="Margins & Mugs Guild">
+
+    <!-- Shared JavaScript -->
+    <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <img src="images/theme.jpg" alt="Margins and Mugs Guild logo - books and coffee theme">
+
+    <nav class="nav-links">
+        <button id="menuButton" class="hamburger" aria-expanded="false" aria-label="Toggle menu">☰</button>
+        <ul class="navigation">
+            <li><a href="index.html" id="homeLink">Home</a></li>
+            <li><a href="discover.html" id="discoverLink">Discover</a></li>
+            <li><a href="directory.html" id="directoryLink">Directory</a></li>
+            <li><a href="join.html" id="joinLink">Join</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <picture>
+            <source srcset="images/theme.jpg" media="(min-width: 768px)">
+            <img src="images/theme.jpg" alt="Book café business community">
+        </picture>
+
+        <div class="hero-content">
+            <h2>Supporting All Book-Loving Businesses</h2>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </div>
+    </section>
+
+    <!-- CURRENT EVENTS -->
+    <section class="events">
+        <h2>Current Events</h2>
+        <ul>
+            <li><strong>Business Networking Night:</strong> March 15</li>
+            <li><strong>Small Business Workshop:</strong> April 2</li>
+            <li><strong>Community Trade Fair:</strong> April 20</li>
+        </ul>
+    </section>
+
+    <!-- WEATHER + SPOTLIGHT WRAPPER -->
+    <div class="weather-forecast-wrapper">
+
+        <!-- WEATHER SECTION -->
+        <section class="weather-card">
+            <h2>Weather</h2>
+
+            <img id="weather-icon" src="images/weather.svg" alt="Weather icon">
+
+            <ul>
+                <li>Temperature: <span id="current-temp"></span>°C</li>
+                <li>Conditions: <span id="weather-desc"></span></li>
+            </ul>
+
+            <h3>3-Day Forecast</h3>
+            <ul class="forecast">
+                <li><span class="day">Day 1</span>: <span class="forecast-temp"></span>°C</li>
+                <li><span class="day">Day 2</span>: <span class="forecast-temp"></span>°C</li>
+                <li><span class="day">Day 3</span>: <span class="forecast-temp"></span>°C</li>
+            </ul>
+        </section>
+
+        <!-- SPOTLIGHTS -->
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+            <div class="spotlight-container" id="spotlight-container">
+                <!-- spotlight cards injected by JS -->
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <p><strong>Margins & Mugs Guild</strong></p>
+            <p>Kampala Street Avenue</p>
+            <p>Email: <a href="mailto:marginandmugs@gmail.com">marginandmugs@gmail.com</a></p>
+            <p>Phone: +256 781 288 158</p>
+        </div>
+
+        <nav class="social-media">
+            <a href="https://instagram.com" aria-label="Instagram">
+                <img src="images/instagram.jpg" alt="Instagram icon">
+            </a>
+            <a href="https://twitter.com" aria-label="Twitter">
+                <img src="images/twitter.png" alt="Twitter icon">
+            </a>
+            <a href="https://tiktok.com" aria-label="TikTok">
+                <img src="images/tiktok.png" alt="TikTok icon">
+            </a>
+            <a href="https://youtube.com" aria-label="YouTube">
+                <img src="images/you.png" alt="YouTube icon">
+            </a>
+        </nav>
+
+        <div>
+            <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

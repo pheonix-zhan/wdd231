@@ -73,139 +73,144 @@ header img {
     transition: 0.3s;
 }
 
-.navigation a:hover {
-    background-color: var(--secondary-color);
-    color: var(--accent2-color);
-}
-
+.navigation a:hover,
 .navigation a.current {
     background-color: var(--secondary-color);
-    font-weight: bold;
+    color: var(--accent2-color);
     border-radius: 4px;
+    font-weight: bold;
 }
-
 
 /* ---------- Hero ---------- */
 .hero {
-    background-image: url("../images/teas.jpg");
+    position: relative;
     background-size: cover;
     background-position: center;
     padding: 2rem 1rem;
-    min-height: 300px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.hero article {
-    background-color: rgba(164, 223, 216, 0.9);
+.hero img,
+.hero picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 1rem;
+    background-color: rgba(164, 223, 216, 0.85);
     padding: 1rem;
     border-radius: 8px;
-    max-width: 100%;
+    text-align: center;
 }
 
-.hero-title {
+.hero-content h2 {
     font-family: var(--text-font);
-    font-size: 2rem;
-    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
 }
 
-/* ---------- Weather & Forecast ---------- */
+.cta-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent1-color);
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--accent2-color);
+}
+
+/* ---------- Current Events ---------- */
+.events {
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.events h2 {
+    margin-top: 0;
+}
+
+/* ---------- Weather + Spotlights ---------- */
 .weather-forecast-wrapper {
     display: block;
-    /* Stacked on mobile */
     padding: 0 1rem;
 }
 
 .weather-card,
-.forecast-card {
+.forecast-card,
+.spotlight-card {
     background-color: var(--secondary-color);
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 8px;
+    text-align: center;
+}
+
+.spotlight-card img,
+.member-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
 }
 
 /* ---------- Directory ---------- */
 .directory-controls {
     text-align: center;
-    margin: 1rem;
-    padding: 0 1rem;
+    margin: 1rem 0;
 }
 
 .directory-controls button {
     padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
     background-color: var(--accent1-color);
-    border: none;
     color: black;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 0 0.5rem;
 }
 
-.directory-controls button:hover,
-.directory-controls button:focus {
+.directory-controls button:hover {
     background-color: var(--accent2-color);
 }
 
 #members {
     display: grid;
     grid-template-columns: 1fr;
-    /* Single column on mobile */
     gap: 1rem;
     padding: 1rem;
 }
 
-#members.list .member-card img {
-    opacity: 0;
-    transform: translateY(-10px);
-    max-height: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-
 #members.list .member-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid var(--accent1-color);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
     text-align: left;
 }
 
 .member-card {
-    background-color: var(--secondary-color);
     padding: 1rem;
     border-radius: 8px;
-    text-align: center;
+    background-color: var(--secondary-color);
 }
-
-.member-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease,
-        max-height 0.3s ease,
-        margin 0.3s ease;
-    max-height: 200px;
-}
-
 
 /* ---------- Footer ---------- */
 footer {
     background-color: var(--secondary-color);
-    color: black;
     padding: 1rem;
-}
-
-.footer-content {
     text-align: center;
-    /* Centered on mobile */
 }
 
 .social-media img {
