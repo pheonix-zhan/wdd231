@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Margins and Mugs Guild is a chamber of commerce dedicated to book cafés, bringing together coffee, literature, and community.">
+    <meta name="author" content="Sandra Nankya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Margins & Mugs Guild | Directory</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Margins & Mugs Guild">
+    <meta property="og:description"
+        content="A chamber of commerce for book cafés, uniting stories, coffee, and culture.">
+    <meta property="og:url" content="https://pheonix-zhan.github.io/chamber/directory.html">
+    <meta property="og:image" content="https://pheonix-zhan.github.io/wdd231/chamber/og-image.jpg">
+
+    <!-- JavaScript -->
+    <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/theme.jpg" alt="Margins and Mugs Guild logo">
+
+        <nav class="nav-links">
+            <button id="menuButton" class="hamburger" aria-expanded="false">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <main class="container">
+
+            <form method="get" action="thanks.html" class="application-form">
+                <h1>Membership Application</h1>
+
+                <label>
+                    First Name
+                    <input type="text" name="first" required title="Enter your first name" autocomplete="given-name">
+                </label>
+
+                <label>
+                    Last Name
+                    <input type="text" name="last" required title="Enter your last name" autocomplete="family-name">
+                </label>
+
+                <label>
+                    Organizational Title
+                    <input type="text" name="orgtitle" title="Your title in the organization"
+                        autocomplete="organization-title" pattern="[A-Za-z\- ]{7,}">
+                </label>
+
+                <label>
+                    Email Address
+                    <input type="email" name="email" required title="Enter a valid email address" autocomplete="email"
+                        placeholder="example@email.com">
+                </label>
+
+                <label>
+                    Mobile Phone
+                    <input type="tel" name="phone" required title="Enter your mobile phone number" autocomplete="tel">
+                </label>
+
+                <label>
+                    Business / Organization Name
+                    <input type="text" name="organization" required title="Enter your business name"
+                        autocomplete="organization">
+                </label>
+
+                <label>
+                    Membership Level
+                    <select name="membership" required title="Select a membership level">
+                        <option value="">Select One</option>
+                        <option value="np">NP Membership</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <label>
+                    Business Description
+                    <textarea name="description" title="Describe your business"></textarea>
+                </label>
+
+                <input type="hidden" name="timestamp" id="timestamp">
+
+                <input type="submit" value="Submit Application">
+            </form>
+
+            <!-- MEMBERSHIP CARDS -->
+            <section class="membership-cards">
+                <div class="card animate">
+                    <h2>NP Membership</h2>
+                    <p>No fee for nonprofits</p>
+                    <button data-modal="npModal">View Benefits</button>
+                </div>
+
+                <div class="card animate">
+                    <h2>Bronze</h2>
+                    <p>Affordable growth</p>
+                    <button data-modal="bronzeModal">View Benefits</button>
+                </div>
+
+                <div class="card animate">
+                    <h2>Silver</h2>
+                    <p>Expanded visibility</p>
+                    <button data-modal="silverModal">View Benefits</button>
+                </div>
+
+                <div class="card animate">
+                    <h2>Gold</h2>
+                    <p>Premium exposure</p>
+                    <button data-modal="goldModal">View Benefits</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- MODALS -->
+        <div class="modal" id="npModal">
+            <div class="modal-content">
+                <h3>NP Membership Benefits</h3>
+                <p>Community events, networking, newsletter inclusion.</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
+        <div class="modal" id="bronzeModal">
+            <div class="modal-content">
+                <h3>Bronze Benefits</h3>
+                <p>Training sessions, event discounts, directory listing.</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
+        <div class="modal" id="silverModal">
+            <div class="modal-content">
+                <h3>Silver Benefits</h3>
+                <p>Homepage spotlight, advertising, premium events.</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
+        <div class="modal" id="goldModal">
+            <div class="modal-content">
+                <h3>Gold Benefits</h3>
+                <p>Top-tier advertising, leadership events, full promotion.</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><strong>Margins & Mugs Guild</strong></p>
+                <p>Kampala Street Avenue</p>
+                <p>Email: <a href="mailto:marginandmugs@gmail.com">marginandmugs@gmail.com</a></p>
+                <p>Phone: +256 781 288 158</p>
+            </div>
+
+            <nav class="social-media">
+                <a href="https://instagram.com"><img src="images/instagram.jpg" alt=""></a>
+                <a href="https://twitter.com"><img src="images/twitter.png" alt=""></a>
+                <a href="https://tiktok.com"><img src="images/tiktok.png" alt=""></a>
+                <a href="https://youtube.com"><img src="images/you.png" alt=""></a>
+            </nav>
+
+            <div>
+                <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

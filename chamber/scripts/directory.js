@@ -193,6 +193,67 @@ async function getWeather() {
         console.error("Weather error:", error);
     }
 }
+// ==================================================
+// FORM TIMESTAMP (APPLICATION FORM)
+// ==================================================
+const timestampField = document.querySelector("#timestamp");
+
+if (timestampField) {
+    timestampField.value = new Date().toISOString();
+}
+
+// ==================================================
+// MEMBERSHIP LEVEL MODALS (FORM PAGE)
+// ==================================================
+const modalButtons = document.querySelectorAll("[data-modal]");
+const modals = document.querySelectorAll(".modal");
+const closeModalButtons = document.querySelectorAll(".close");
+
+modalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modalId = button.dataset.modal;
+        const modal = document.getElementById(modalId);
+
+        if (modal) {
+            modal.style.display = "block";
+            modal.querySelector(".close").focus();
+        }
+    });
+});
+
+closeModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        button.closest(".modal").style.display = "none";
+    });
+});
+
+// Close modal when clicking outside content
+window.addEventListener("click", event => {
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+// Close modal with ESC key (accessibility)
+window.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        modals.forEach(modal => modal.style.display = "none");
+    }
+});
+
+// The thank you page params
+const params = new URLSearchParams(window.location.search);
+
+document.querySelector('#results').innerHTML = `
+  <p><strong>First Name:</strong> ${params.get('first')}</p>
+  <p><strong>Last Name:</strong> ${params.get('last')}</p>
+  <p><strong>Email:</strong> ${params.get('email')}</p>
+  <p><strong>Phone:</strong> ${params.get('phone')}</p>
+  <p><strong>Organization:</strong> ${params.get('organization')}</p>
+  <p><strong>Date Submitted:</strong> ${params.get('timestamp')}</p>
+`;
 
 // ==================================================
 // RUN
