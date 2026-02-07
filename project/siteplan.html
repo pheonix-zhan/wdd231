@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Teas & Tales</title>
+
+    <meta name="description"
+        content="A cozy book café for fiction lovers. Sip tea, explore worlds of fantasy, romance, and adventure, and lose yourself in the charm of storytelling.">
+    <meta name="author" content="Nankya Sandra">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/siteplan.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1>Teas & Tales – Site Plan</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Site Name</h2>
+            <p><strong>Teas & Tales – Book Café Website</strong></p>
+            <p>The name represents a warm, cozy place where customers enjoy delicious teas while discovering new
+                stories. It blends tea culture with reading culture, making it ideal for branding.</p>
+            <p><strong>Optional Domain:</strong> teasandtalescafe.com (availability varies)</p>
+        </section>
+
+        <section>
+            <h2>Site Purpose </h2>
+
+            <p>
+                Teas & Tales is a cozy book café website that blends warm beverages with immersive fictional literature.
+                It provides:
+                - A homepage showcasing atmosphere, stories, and community.
+                - A teas page with beverage + book pairings.
+                - A contact page with location, phone, and email.
+                - A membership form for The Tea Girls.The site provides a cozy online hub for book lovers and café
+                visitors. It introduces the café atmosphere,
+                showcases teas and pastries, highlights book club events, and provides contact options. Lazy-loading
+                images help maintain performance.</p>
+        </section>
+
+        <section>
+            <h2>Scenarios</h2>
+            <ul>
+                <li>What teas and pastries does Teas & Tales serve?</li>
+                <li>Does the café host book club meetings or reading events?</li>
+                <li>How do I contact Teas & Tales for inquiries or event bookings?</li>
+                <li>Where is the café located and what are the opening hours?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color Scheme</h2>
+            <table>
+                <tr>
+                    <th>Color</th>
+                    <th>Hex Code</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td>primary-color</td>
+                    <td>#245124;</td>
+                    <td>Navigation, accents, buttons</td>
+                </tr>
+                <tr>
+                    <td>accent1-color</td>
+                    <td> #FFFDD0;</td>
+                    <td>Background</td>
+                </tr>
+                <tr>
+                    <td>secondary-color</td>
+                    <td>: #4B3621</td>
+                    <td>Headings, titles</td>
+                </tr>
+                <tr>
+                    <td>accent2-color</td>
+                    <td>#C0808</td>
+                    <td>Accents, borders</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Typography
+                ----------
+                **Primary Fonts:**
+                - **Crimson Text** – body text and paragraphs.
+                - **Dancing Script** – headings, titles, and accent phrases.
+
+            </h2>
+            <ul>
+                <li><strong>*Crimson Text, cursive</strong> Headings, hero text</li>
+                <li><strong>Dancing Script, serif:</strong> Body text, navigation, buttons</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Wireframes</h2>
+            <h3>Mobile View</h3>
+            <img src="images/small.png" alt="Teas & Tales logo" height="50">
+
+            <h3>Desktop View</h3>
+            <img src="images/large.png" alt="Teas & Tales logo" height="50">
+        </section>
+
+        <section>
+            <h2>Testing</h2>
+            <ul>
+                <li>HTML validated and accessible</li>
+                <li>CSS validated with correct contrast and readability</li>
+                <li>Lazy-loading images for performance</li>
+                <li>Keyboard-friendly navigation and alt text on images</li>
+                <li>Strong meta tags for SEO</li>
+                <li>color contrast</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Teas & Tales Site Plan</p>
+    </footer>
+
+
+    <!-- Additional Page Details -->
+    <h2>Page Descriptions</h2>
+    <h3>index.html (Homepage)</h3>
+    <p>Introduces the caféand gives information about the cafe.Reminder to create a json file for the teas and books</p>
+    <h3>teas.html (Teas & Pairings)</h3>
+    <p>Table of drinks paired with books plus a selection form and after selecting you are taken to a pae that shows
+        your order and thanks you</p>
+    <h3>contact.html, FAQ, images, and a join form(Contact & Location)</h3>
+    <p>Phone, email, address, map, and a join us form .</p>
+
+    <section id="lazy-loading">
+        <h2>Lazy Loading Explanation</h2>
+        <p>The website uses JavaScript to implement lazy loading for all images. When the page loads, images are
+            assigned a temporary placeholder while the actual image source is stored in a <code>data-src</code>
+            attribute. An <code>IntersectionObserver</code> watches when each image enters the viewport. When an image
+            becomes visible, the script swaps the placeholder with the real image, removes the lazy class, and stops
+            observing the image. This improves page performance and loading speed, especially on mobile devices.</p>
+    </section>
+
+    <section id="js-features">
+        <h2>JavaScript Features Summary</h2>
+        <ul>
+            <li><strong>Mobile Navigation Toggle:</strong> The hamburger menu opens and closes the navigation using
+                <code>classList.toggle()</code>, and updates <code>aria-expanded</code> for accessibility.
+            </li>
+            <li><strong>Auto-Close Navigation:</strong> When users tap a navigation link on mobile, the menu closes
+                automatically.</li>
+            <li><strong>Lazy Loading:</strong> Uses <code>IntersectionObserver</code> to load images only when needed,
+                improving performance.</li>
+            <li><strong>Footer Date Scripts:</strong> Automatically displays the current year and last modified date
+                using JavaScript.</li>
+            <li><strong>Data fetching:</strong> fetch data from a json file directly
+                using JavaScript.</li>
+            <li><strong>Dynamic Content Generation:</strong> Generate and display atleast 15 items from a data source
+                using JavaScript.</li>
+            <li><strong>Modal Dialogs:</strong> comfirm an action also create an animation
+                using JavaScript.</li>
+            <li><strong>DOM Manipulation and Event Handling:</strong> Select elements using appropriate methods
+                using JavaScript.</li>
+            <li><strong>Array methods:</strong> use atleast one array method
+                using JavaScript.</li>
+            <li><strong>Template literals:</strong> use template literals for string construction
+                using JavaScript.</li>
+            <li><strong>ES Modules:</strong> structure my js code using ES modules to demonstrate proper code
+                organisations.</li>
+
+        </ul>
+    </section>
+
+</body>
+
+</html>
