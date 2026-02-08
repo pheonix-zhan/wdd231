@@ -93,8 +93,8 @@
     }
 }
 
+/* Large Screens (1025px+) */
 @media (min-width: 1025px) {
-
   .discover-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:

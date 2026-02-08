@@ -81,6 +81,7 @@ header img {
     font-weight: bold;
 }
 
+
 /* ---------- Hero ---------- */
 .hero {
     position: relative;
@@ -217,6 +218,7 @@ footer {
     width: 30px;
     margin: 0.25rem;
 }
+
 /* ---------- Application Form ---------- */
 .application-form {
     background-color: var(--secondary-color);
@@ -261,6 +263,7 @@ footer {
 .application-form input[type="submit"]:hover {
     background-color: var(--accent2-color);
 }
+
 /* ---------- Membership Cards ---------- */
 .membership-cards {
     display: grid;
@@ -277,9 +280,17 @@ footer {
     animation: fadeUp 0.8s forwards;
 }
 
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.4s; }
-.card:nth-child(4) { animation-delay: 0.6s; }
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.6s;
+}
 
 .card button {
     background-color: var(--accent1-color);
@@ -367,35 +378,110 @@ footer {
         align-items: center;
     }
 }
+
+/* ---------- Discover Page Cards/Grid ---------- */
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+}
+
+.card5 {
+    grid-area: card5;
+}
+
+.card6 {
+    grid-area: card6;
+}
+
+.card7 {
+    grid-area: card7;
+}
+
+.card8 {
+    grid-area: card8;
+}
+
 .discover-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-areas:
-    "card1"
-    "card2"
-    "card3"
-    "card4"
-    "card5"
-    "card6"
-    "card7"
-    "card8";
-  padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5"
+        "card6"
+        "card7"
+        "card8";
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--secondary-color);
+    /* keeps consistent with your site */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s forwards;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.6s;
 }
 
 .card figure {
-  margin: 0;
+    margin: 0;
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.card button {
+    background-color: var(--accent1-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: var(--accent2-color);
+}
+
+main h1 {
+    font-family: var(--text-font);
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
