@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Margins and Mugs Guild is a chamber of commerce dedicated to book cafés, bringing together coffee, literature, and community.">
+    <meta name="author" content="Sandra Nankya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Margins & Mugs Guild | Discover</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Margins & Mugs Guild">
+    <meta property="og:description"
+        content="A chamber of commerce for book cafés, uniting stories, coffee, and culture.">
+    <meta property="og:url" content="https://pheonix-zhan.github.io/chamber/discover.html">
+    <meta property="og:image" content="https://pheonix-zhan.github.io/wdd231/chamber/og-image.jpg">
+
+    <!-- JavaScript -->
+    <script src="scripts/discover.js" type="module" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/theme.jpg" alt="Margins and Mugs Guild logo">
+
+        <nav class="nav-links">
+            <button id="menuButton" class="hamburger" aria-expanded="false">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Visitor message (localStorage) -->
+        <section id="visit-message"></section>
+
+        <!-- Cards grid -->
+        <section class="discover-grid">
+
+            <section class="card" style="grid-area: card1;">
+                <h2>Uganda Museum</h2>
+                <figure>
+                    <img src="images/uganda.webp" alt="Uganda Museum" loading="lazy">
+                </figure>
+                <address>Kira Road, Kampala</address>
+                <p>
+                    The oldest museum in East Africa, showcasing Uganda’s cultural heritage,
+                    traditional artifacts, and historical exhibitions.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card2;">
+                <h2>Ndere Cultural Centre</h2>
+                <figure>
+                    <img src="images/ndere.webp" alt="Ndere Cultural Centre" loading="lazy">
+                </figure>
+                <address>Ntinda, Kampala</address>
+                <p>
+                    A vibrant cultural center famous for traditional Ugandan music, dance,
+                    storytelling, and performances.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card3;">
+                <h2>Kasubi Tombs</h2>
+                <figure>
+                    <img src="images/kasubi.webp" alt="Kasubi Tombs" loading="lazy">
+                </figure>
+                <address>Kasubi Hill, Kampala</address>
+                <p>
+                    A UNESCO World Heritage Site and burial grounds for the kings of Buganda,
+                    rich in history and tradition.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card4;">
+                <h2>Lake Victoria</h2>
+                <figure>
+                    <img src="images/lake.webp" alt="Lake Victoria shoreline" loading="lazy">
+                </figure>
+                <address>Entebbe Road</address>
+                <p>
+                    Africa’s largest lake offering scenic views, fishing, boat rides,
+                    and breathtaking sunsets.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card5;">
+                <h2>Namirembe Cathedral</h2>
+                <figure>
+                    <img src="images/cathed.webp" alt="Namirembe Cathedral" loading="lazy">
+                </figure>
+                <address>Rubaga Hill, Kampala</address>
+                <p>
+                    One of Uganda’s oldest Anglican cathedrals, offering panoramic views
+                    of Kampala city.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card6;">
+                <h2>Kabaka’s Palace</h2>
+                <figure>
+                    <img src="images/palace.webp" alt="Kabaka’s Palace" loading="lazy">
+                </figure>
+                <address>Mengo, Kampala</address>
+                <p>
+                    The official residence of the King of Buganda, reflecting the cultural
+                    heritage of the kingdom.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card7;">
+                <h2>Craft Village</h2>
+                <figure>
+                    <img src="images/craft.webp" alt="Craft Village Kampala" loading="lazy">
+                </figure>
+                <address>Buganda Road, Kampala</address>
+                <p>
+                    A popular market for handmade crafts, artwork, souvenirs, and gifts
+                    made by local artisans.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+            <section class="card" style="grid-area: card8;">
+                <h2>Baháʼí Temple</h2>
+                <figure>
+                    <img src="images/bahai.webp" alt="Baháʼí Temple Uganda" loading="lazy">
+                </figure>
+                <address>Kikaya Hill, Kampala</address>
+                <p>
+                    The only Baháʼí House of Worship in Africa, surrounded by peaceful gardens
+                    and stunning views.
+                </p>
+                <button>Learn More</button>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><strong>Margins & Mugs Guild</strong></p>
+                <p>Kampala Street Avenue</p>
+                <p>Email: <a href="mailto:marginandmugs@gmail.com">marginandmugs@gmail.com</a></p>
+                <p>Phone: +256 781 288 158</p>
+            </div>
+
+            <nav class="social-media">
+                <a href="https://instagram.com"><img src="images/instagram.jpg" alt="Instagram"></a>
+                <a href="https://twitter.com"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="https://tiktok.com"><img src="images/tiktok.png" alt="TikTok"></a>
+                <a href="https://youtube.com"><img src="images/you.png" alt="YouTube"></a>
+            </nav>
+
+            <div>
+                <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

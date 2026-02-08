@@ -367,4 +367,35 @@ footer {
         align-items: center;
     }
 }
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+  padding: 1rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card figure {
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
 
