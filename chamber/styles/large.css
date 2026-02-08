@@ -1,4 +1,5 @@
 @media only screen and (min-width: 768px) {
+
     /* ---------- Nav ---------- */
     .hamburger {
         display: none;
@@ -57,6 +58,14 @@
     }
 
     /* ---------- Directory grid ---------- */
+
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
     #members.grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -80,33 +89,32 @@
         gap: 1rem;
     }
 
-    .footer-content > div:first-child {
+    .footer-content>div:first-child {
         text-align: left;
     }
 
-    .footer-content > nav {
+    .footer-content>nav {
         text-align: center;
     }
 
-    .footer-content > div:last-child {
+    .footer-content>div:last-child {
         text-align: right;
     }
 }
 
+
 /* Large Screens (1025px+) */
 @media (min-width: 1025px) {
-  .discover-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "card1 card1 card2 card3"
-      "card4 card5 card5 card6"
-      "card7 card8 card8 card6";
-  }
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1 card1 card2 card3"
+            "card4 card5 card5 card6"
+            "card7 card8 card8 card6";
+    }
 
-  .card img:hover {
-    transform: scale(1.05) rotate(1deg);
-    filter: brightness(1.1) contrast(1.05);
-  }
+    .card img:hover {
+        transform: scale(1.05) rotate(1deg);
+        filter: brightness(1.1) contrast(1.05);
+    }
 }
-
-
