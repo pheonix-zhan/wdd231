@@ -1,0 +1,99 @@
+@media only screen and (min-width: 768px) {
+
+    /* ---------- Nav ---------- */
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .navigation li {
+        margin: 0;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        max-width: 400px;
+        text-align: left;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* ---------- Weather + Spotlights layout ---------- */
+    .weather-forecast-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .spotlights {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .spotlight-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+
+    /* ---------- Footer ---------- */
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-content>div:first-child {
+        text-align: left;
+    }
+
+    .footer-content>nav {
+        text-align: center;
+    }
+
+    .footer-content>div:last-child {
+        text-align: right;
+    }
+}
+
+
+/* Large Screens (1025px+) */
+@media (min-width: 1025px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1 card1 card2 card3"
+            "card4 card5 card5 card6"
+            "card7 card8 card8 card6"
+            "card9 card10 card10 card11"
+            "card12 card13 card13 card11";
+    }
+
+    .card img:hover {
+        transform: scale(1.05) rotate(1deg);
+        filter: brightness(1.1) contrast(1.05);
+    }
+}

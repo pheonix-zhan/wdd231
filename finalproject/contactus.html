@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description"
@@ -36,45 +37,104 @@
 
 <body>
 
-<header>
-    <img src="images/theme.jpg" alt="Teas N Tales">
+    <header>
+        <img src="images/theme.jpg" alt="Teas N Tales">
 
-    <nav class="nav-links">
-        <button id="menuButton" class="hamburger" aria-expanded="false">☰</button>
-        <ul class="navigation">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-            <li><a href="order.html" class="active">Order</a></li>
-            <li><a href="join.html">Join</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-
-</main>
-
-<footer>
-    <div class="footer-content">
-        <div>
-            <p><strong>Teas N Tales</strong></p>
-            <p>Ntinda Bugolobi Road</p>
-            <p>Email: <a href="mailto:teasntales@gmail.com">teasntales@gmail.com</a></p>
-            <p>Phone: +256 781 288 158</p>
-        </div>
-
-        <nav class="social-media">
-            <a href="https://instagram.com"><img src="images/instagram.jpg" alt=""></a>
-            <a href="https://twitter.com"><img src="images/twitter.png" alt=""></a>
-            <a href="https://tiktok.com"><img src="images/tiktok.png" alt=""></a>
-            <a href="https://youtube.com"><img src="images/you.png" alt=""></a>
+        <nav class="nav-links">
+            <button id="menuButton" class="hamburger" aria-expanded="false">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="order.html" class="active">Order</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
         </nav>
+    </header>
+    <!-- complaint form -->
+    <main class="container">
+        <form method="get" action="sorry.html" class="compliant-form">
+            <h1>Complaint Form</h1>
+            <label>
+                First Name
+                <input type="text" name="first" required title="Enter your first name" autocomplete="given-name">
+            </label>
 
-        <div>
-            <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231 | Final Project</p>
-            <p id="lastModified"></p>
+            <label>
+                Last Name
+                <input type="text" name="last" required title="Enter you last name" autocomplete="family-name">
+            </label>
+
+            <label>
+                Email Address
+                <input type="email" name="email" required title="Enter a valid email address" autocomplete="email"
+                    placeholder="example@gmail.com">
+            </label>
+
+            <label>
+                Mobile Phone
+                <input type="tel" name="phone" required title="Enter you mobile phone number" autocomplete="tel">
+            </label>
+
+            <label>
+                Complaint Description
+                <textarea name="description" title="Please tell us you complaint in details"></textarea>
+            </label>
+
+            <input type="hidden" name="timestamp" id="timestamp">
+
+            <input type="submit" value="Submit Complaint">
+
+        </form>
+
+        
+
+
+        <!-- FAQ side bar -->
+        <aside class="sidebar">
+            <h3>FAQ</h3>
+
+            <div class="faq">
+                <span>What if I don’t know which fiction book to choose?</span>
+                <p>Our staff will happily help you find the perfect read. We’ll ask about your favorite genres and
+                    recommend books, even letting you sample a chapter with your tea.</p>
+            </div>
+
+            <div class="faq">
+                <span>Can I reserve a specific book every visit?</span>
+                <p>We don’t offer long-term reservations to ensure all guests can enjoy our collection.</p>
+            </div>
+
+            <div class="faq">
+                <span>What if the café gets noisy while reading?</span>
+                <p>Teas & Tales is designed as a peaceful space. Staff will kindly remind guests to keep voices low.</p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><strong>Teas N Tales</strong></p>
+                <p>Ntinda Bugolobi Road</p>
+                <p>Email: <a href="mailto:teasntales@gmail.com">teasntales@gmail.com</a></p>
+                <p>Phone: +256 781 288 158</p>
+            </div>
+
+            <nav class="social-media">
+                <a href="https://instagram.com"><img src="images/instagram.jpg" alt=""></a>
+                <a href="https://twitter.com"><img src="images/twitter.png" alt=""></a>
+                <a href="https://tiktok.com"><img src="images/tiktok.png" alt=""></a>
+                <a href="https://youtube.com"><img src="images/you.png" alt=""></a>
+            </nav>
+
+            <div>
+                <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231 | Final Project</p>
+                <p id="lastModified"></p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>
