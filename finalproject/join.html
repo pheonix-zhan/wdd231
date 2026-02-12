@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Teas N tales is a space that is created for anyone that feels out of place or anyone that would like to get lost in their heads once in a while. No need for coffee you can have a charmomile tea to make the experience much">
+    <meta name="author" content="Sandra Nankya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teas N Tales | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Teas N tales">
+    <meta property="og:description"
+        content="A place for all the girlies and girly pop to enjoy and have a free space to be delusional as much as they, or we want. I am excited that one day this will come to be a true place and not just in my imagination">
+    <meta property="og:url" content="https://pheonix-zhan.github.io/finalproject/index.html">
+    <meta property="og:image" content="https://pheonix-zhan.github.io/wdd231/finalproject/og-image.jpg">
+
+    <!-- JavaScript -->
+    <script src="scripts/tales.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/theme.jpg" alt="Teas N Tales">
+
+        <nav class="nav-links">
+            <button id="menuButton" class="hamburger" aria-expanded="false">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="order.html" class="active">Order</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Joining form -->
+    <main class="container">
+        <form method="get" action="thankyou.html" class="application-form">
+            <h1>Subscription Form</h1>
+            <label>
+                First Name
+                <input type="text" name="first" required title="Enter you first name" autocomplete="given-name">
+            </label>
+
+            <label>
+                Last Name
+                <input type="text" name="last" required title="Enter you last name" autocomplete="family-name">
+            </label>
+
+            <label>
+                Middle Name
+                <input type="text" name="middle" required title="Enter you last name" autocomplete="other-name">
+            </label>
+
+            <label>
+                Email Address
+                <input type="email" name="email" required title="Enter a valid email address" autocomplete="email"
+                    placeholder="example@gmail.com">
+            </label>
+
+            <label>
+                Mobile Phone
+                <input type="tel" name="phone" required title="Enter you mobile phone number" autocomplete="tel">
+            </label>
+
+            <label>
+                Subsription Level
+                <select name="subscription" required title="Select a subscription level">
+                    <option value="">Select One</option>
+                    <option value="standard">Standard subscription</option>
+                    <option value="premium">Premium subscription</option>
+                    <option value="elite">Elite subscription</option>
+                </select>
+            </label>
+        </form>
+
+        <!-- subsription level -->
+        <section class="subscription-level">
+            <div class="card animate">
+                <h2>Standard</h2>
+                <p>Limited Exposure</p>
+                <button data-modals="standardsModal">View Benefits</button>
+
+            </div>
+
+            <div class="card animate">
+                <h2>Premium</h2>
+                <p>Full Exposure</p>
+                <button data-modals="standardsModal">View Benefits</button>
+
+            </div>
+
+            <div class="card animate">
+                <h2>Elite</h2>
+                <p>Unexpected Perks</p>
+                <button data-modals="standardsModal">View Benefits</button>
+            </div>
+        </section>
+        <!-- modals for subscription -->
+        <div class="modal" id="standardModal">
+            <div class="modal-content">
+                <h3>Standard Subscription Benefits</h3>
+                <p>Access to books, access to reading space, access to wifi</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
+        <div class="modal" id="premiumModal">
+            <div class="modal-content">
+                <h3>Premiun Subscription Benefits</h3>
+                <p>Access to books, access to reading space, access to wifi, Access to computer Room, Access to the Vip
+                    lounge, Access to free dinks and pastries</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
+        <div class="modal" id="eliteModal">
+            <div class="modal-content">
+                <h3>Elite Subscription Benefits</h3>
+                <p>Access to books, access to reading space, access to unlimitted wifi, Access to computer Room, Access
+                    to the Vip lounge, Access to free dinks and pastries, Access to books before release, Access to
+                    writers for Q & A, Access to private reading areas, Free headphones for maximum delusion.</p>
+                <button class="close">Close</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p><strong>Teas N Tales</strong></p>
+                <p>Ntinda Bugolobi Road</p>
+                <p>Email: <a href="mailto:teasntales@gmail.com">teasntales@gmail.com</a></p>
+                <p>Phone: +256 781 288 158</p>
+            </div>
+
+            <nav class="social-media">
+                <a href="https://instagram.com"><img src="images/instagram.jpg" alt=""></a>
+                <a href="https://twitter.com"><img src="images/twitter.png" alt=""></a>
+                <a href="https://tiktok.com"><img src="images/tiktok.png" alt=""></a>
+                <a href="https://youtube.com"><img src="images/you.png" alt=""></a>
+            </nav>
+
+            <div>
+                <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231 | Final Project</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
