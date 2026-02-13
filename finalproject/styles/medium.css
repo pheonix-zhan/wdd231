@@ -1,15 +1,17 @@
 /* Medium Screens (641px–1024px) */
-@media (min-width: 641px) {
+@media (min-width: 641px) and (max-width: 1024px) {
   .discover-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "card1 card2"
-      "card3 card4"
-      "card5 card6"
-      "card7 card8"
-      "card9 card10"
+      "card1  card2"
+      "card3  card4"
+      "card5  card6"
+      "card7  card8"
+      "card9  card10"
       "card11 card12"
-      "card13";
+      "card13 card14"
+      "card15 card16"
+      "card17 card17";
   }
 
   .card img:hover {

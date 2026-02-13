@@ -1,15 +1,15 @@
 // Global navigation
-const menuButton = document.querySelector("#menuButton");  
-const navMenu = document.querySelector(".navigation");    
+const menuButton = document.querySelector("#menuButton");
+const navMenu = document.querySelector(".navigation");
 
 if (menuButton && navMenu) {
-  menuButton.addEventListener("click", () => {
-    navMenu.classList.toggle("active");  
-    menuButton.setAttribute(
-      "aria-expanded",
-      navMenu.classList.contains("active")
-    );
-  });
+    menuButton.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuButton.setAttribute(
+            "aria-expanded",
+            navMenu.classList.contains("active")
+        );
+    });
 }
 
 // Active page indicators
@@ -18,7 +18,7 @@ const currentPage = window.location.pathname.split("/").pop();
 
 navLinks.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");  
+        link.classList.add("active");
         link.setAttribute("aria-current", "page");
     }
 });
@@ -38,13 +38,13 @@ if (timestampField) {
 }
 
 // Modals for join page
-const modalButtons = document.querySelectorAll("[data-modal]");  
+const modalButtons = document.querySelectorAll("[data-modal]");
 const modals = document.querySelectorAll(".modal");
 const closeModalButtons = document.querySelectorAll(".close");
 
 modalButtons.forEach(button => {
     button.addEventListener("click", () => {
-        const modalId = button.dataset.modal;  
+        const modalId = button.dataset.modal;
         const modal = document.getElementById(modalId);
 
         if (modal) {
@@ -93,9 +93,9 @@ if (document.querySelector('#results')) {
 }
 
 // Order page 
-import { menu as order } from "../data/order.mjs";  
+import { menu as order } from "../data/order.mjs";
 
-const container = document.querySelector(".order-grid");  
+const container = document.querySelector(".order-grid");
 
 if (container && order) {
     container.innerHTML = '';  // Clear existing hardcoded cards to avoid duplication
@@ -137,7 +137,66 @@ if (messageBox) {
 
     localStorage.setItem("lastVisit", now);
 }
+//weather and Api
+const tempSpan = document.querySelector("#temperature");
+const descSpan = document.querySelector("#conditions");
+const windSpan = document.querySelector("#wind-speed");
+const chillSpan = document.querySelector("#wind-chill");
+const forecastContainer = document.querySelector("#forecast-container");
 
-// Uncomment if you add weather functions:
-// getMembers();
-// getWeather();
+async function getWeather() {
+    if (!tempSpan || !descSpan) return;
+
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch weather");
+
+        const data = await response.json();
+
+        const current = data.list[0];
+
+        tempSpan.textContent = `${Math.round(current.main.temp)}°C`;
+        descSpan.textContent = current.weather[0].description;
+
+        if (windSpan) {
+            windSpan.textContent = `${current.wind.speed} m/s`;
+        }
+
+        if (chillSpan) {
+            chillSpan.textContent = "N/A";
+        }
+
+        if (iconImg) {
+            const icon = current.weather[0].icon;
+            iconImg.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+            iconImg.alt = current.weather[0].description;
+        }
+
+        // 3-Day Forecast
+        if (forecastContainer) {
+            forecastContainer.innerHTML = "";
+
+            const forecast = data.list.filter(item =>
+                item.dt_txt.includes("12:00:00")
+            ).slice(0, 3);
+
+            forecast.forEach(day => {
+                const div = document.createElement("div");
+                div.innerHTML = `
+                    <p><strong>${new Date(day.dt_txt).toLocaleDateString()}</strong></p>
+                    <p>${Math.round(day.main.temp)}°C</p>
+                `;
+                forecastContainer.appendChild(div);
+            });
+        }
+
+    } catch (error) {
+        console.error("Weather error:", error);
+    }
+}
+
+
+
+
+getWeather();
