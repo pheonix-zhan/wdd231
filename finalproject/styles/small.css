@@ -17,7 +17,7 @@
 body {
     margin: 0;
     font-family: var(--text-font);
-    color: var(--accent2-color);
+    color: var(--accent1-color);
     line-height: 1.6;
 }
 
@@ -53,7 +53,7 @@ header img {
     position: absolute;
     top: 60px;
     right: 0;
-    background-color: var(--accent2-color);
+    background-color: var(--accent1-color);
     padding: 1rem;
     z-index: 1000;
     gap: 1rem;
@@ -73,7 +73,7 @@ header img {
     display: block;
     padding: 0.5rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: black;
     transition: 0.3s;
 }
 
