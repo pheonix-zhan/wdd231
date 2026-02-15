@@ -39,7 +39,7 @@ header img {
 }
 
 .hamburger {
-    display: block;
+    display: flex;
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -51,10 +51,13 @@ header img {
     display: none;
     list-style: none;
     position: absolute;
-    top: 100%;
+    top: 60px;
     right: 0;
+    flex-direction: none;
     background-color: var(--accent1-color);
     padding: 1rem;
+    z-index: 1000;
+    gap: 1rem;
     min-width: 150px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -89,6 +92,7 @@ header img {
     text-align: center;
     padding: 2rem 1rem;
     background-color: var(--secondary-color);
+    z-index: 1;
 }
 
 .hero-banner img {
@@ -418,8 +422,8 @@ main.container {
     margin: 0;
     color: #2B6777;
 }
-.complaint-form
-.application-form {
+
+.complaint-form .application-form {
     background-color: var(--accent1-color);
     border-radius: 8px;
     padding: 2rem;

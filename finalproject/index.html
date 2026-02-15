@@ -32,7 +32,7 @@
     <meta property="og:image" content="https://pheonix-zhan.github.io/wdd231/finalproject/og-image.jpg">
 
     <!-- JavaScript -->
-    <script src="scripts/tales.js" defer></script>
+    <script type="module" src="scripts/tales.js"></script>
 </head>
 
 <body>
@@ -43,10 +43,10 @@
         <nav class="nav-links">
             <button id="menuButton" class="hamburger" aria-expanded="false">☰</button>
             <ul class="navigation">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="contactus.html" class="active">Contact Us</a></li>
-                <li><a href="order.html" class="active">Order</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -71,12 +71,12 @@
 
             <section class="weather-card" id="weather">
                 <h2>Current Weather</h2>
-                <img id="weather-icon" src="images/weather.svg" alt="">
+                <!-- <img id="weather-icon" src="images/weather.svg" alt=""> -->
                 <ul>
+                    <li>Town: <span id="town"></span></li>
                     <li>Temperature: <span id="temperature"></span></li>
-                    <li>Conditions: <span id="conditions"></span></li>
-                    <li>Wind: <span id="wind-speed"></span></li>
-                    <li>Wind Chill: <span id="wind-chill"></span></li>
+                    <li>description: <span id="description"></span></li>
+                    <li>Image<img id="weather-icon" src="" alt=""></li>
                 </ul>
             </section>
 
@@ -106,7 +106,13 @@
 
             <div>
                 <p>&copy; <span id="currentYear"></span> Sandra Nankya | WDD 231 | Final Project</p>
+                <p>
+                    Project Demo Video:
+                    <a href="https://app.screencastify.com/watch/8nLJ6iadoPBsvUHWujVd?checkOrg=f39641da-c3bb-4d13-9c34-18db869da8c2" target="_blank">
+                        Watch Here
+                    </a>
                 <p id="lastModified"></p>
+
             </div>
         </div>
     </footer>

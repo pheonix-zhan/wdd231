@@ -18,4 +18,15 @@
     transform: scale(1.03);
     filter: brightness(1.05);
   }
+
+  .navigation {
+    display: flex !important;
+    /* always visible on larger screens */
+    flex-direction: row;
+  }
+
+  .hamburger {
+    display: none;
+    /* hide button on large screens */
+  }
 }
