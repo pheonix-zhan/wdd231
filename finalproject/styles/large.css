@@ -12,11 +12,13 @@
         box-shadow: none;
         padding: 0;
         gap: 1rem;
+        
     }
 
     .navigation li {
         margin: 0;
     }
+
 
     /* ---------- Hero ---------- */
     .hero {
