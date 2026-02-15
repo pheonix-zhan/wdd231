@@ -17,7 +17,7 @@
 body {
     margin: 0;
     font-family: var(--text-font);
-    color: var(--text-color);
+    color: var(--accent2-color);
     line-height: 1.6;
 }
 
@@ -44,7 +44,7 @@ header img {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: black;
+    color: var(--accent1-color);
 }
 
 .navigation {
@@ -128,7 +128,7 @@ header img {
 }
 
 .big-btn:hover {
-    background-color: var(--accent1-color);
+    background-color: var(--primary-color);
 }
 
 /* ---------- Weather and Forecast (index.html) ---------- */
