@@ -53,7 +53,6 @@ header img {
     position: absolute;
     top: 60px;
     right: 0;
-    flex-direction: right;
     background-color: var(--accent2-color);
     padding: 1rem;
     z-index: 1000;
