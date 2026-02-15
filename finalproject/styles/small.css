@@ -4,7 +4,7 @@
     --accent1-color: #FFFDD0;
     --accent2-color: #C08081;
     --highlight-color: #2B6777;
-    --text-color: #000;
+    --text-color: white;
     --heading-font: 'Dancing Script', cursive;
     --text-font: 'Crimson Text', serif;
 }
@@ -54,7 +54,7 @@ header img {
     top: 60px;
     right: 0;
     flex-direction: none;
-    background-color: var(--accent1-color);
+    background-color: var(--accent2-color);
     padding: 1rem;
     z-index: 1000;
     gap: 1rem;
@@ -105,7 +105,7 @@ header img {
 .banner-text {
     font-family: var(--text-font);
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: white;
 }
 
 /* ---------- Buttons (index.html, general) ---------- */
@@ -540,7 +540,7 @@ footer {
     background-color: var(--primary-color);
     padding: 1rem;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 .social-media img {
